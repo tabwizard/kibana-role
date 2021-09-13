@@ -1,0 +1,6 @@
+server.port: 5601
+server.host: "{{ server_host }}"
+server.name: "Kibana-Wizard"
+elasticsearch.hosts: ["http://{{ el-instance }}:9200"]
+kibana.index: ".kibana"
+logging.quiet: true
