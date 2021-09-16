@@ -1,0 +1,20 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: "Check file /var/run/kibana/kibana.pid"
+      stat:
+        path: /var/run/kibana/kibana.pid
+      register: pid_stat_result
+    - name: "Check file /var/log/kibana/kibana.log"
+      stat:
+        path: /var/log/kibana/kibana.log
+      register: log_stat_result
+    - name: "Assert file kibana.pid & kibana.log"
+      assert:
+        that: 
+        - not pid_stat_result.stat.exists
+        - not log_stat_result.stat.exists

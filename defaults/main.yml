@@ -2,4 +2,4 @@
 kibana_version: "7.14.1"
 kibana_install_type: remote
 server_host: 0.0.0.0
-elastic_instance: "{{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] }}"
+elastic_instance: "{{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] | default('0.0.0.0') }}"
