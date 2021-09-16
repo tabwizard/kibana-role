@@ -15,7 +15,7 @@ Role Variables
 |-------------------|-------------|--------------------------------------------------------------------|
 | kibana_version    | "7.14.0"    | Параметр, который определяет какой версии kibana будет установлена |
 | server_host       | 0.0.0.0     | Адрес по которому будет доступен сервер Kibana                     |
-| elastic-instance  | "{{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] }}" | Адрес хоста с Elasticsearch                                        |
+| elastic-instance  | "{{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] | default('0.0.0.0') }}" | Адрес хоста с Elasticsearch                                        |
 
 Example Playbook
 ----------------
