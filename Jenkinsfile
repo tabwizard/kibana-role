@@ -15,6 +15,7 @@ pipeline{
         }
         stage('Molecule test'){
             steps{
+                sh 'echo Develop branch'
                 sh 'molecule test'
             }
         }
